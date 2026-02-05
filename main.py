@@ -29,6 +29,13 @@ def validar_letra(letra):
         return False
     return True
 
+def adicionar_letra(letter, word, incognita):
+    for index, let in enumerate(word):
+        if letter == word[index]:
+            incognita[index] = letter
+    print(f'A letra {letter} estava na palavra!\n{"".join(incognita)}')
+    return
+
 
 while not descoberta and tentativas > 0:
     letra = input('Insira uma letra: ').strip().lower()
@@ -36,14 +43,11 @@ while not descoberta and tentativas > 0:
     if validar_letra(letra):
         if letra in letras:
             print(f'Você já tentou a letra "{letra}".\nAs letras já tentadas foram {letras}')
+            continue
 
         letras.add(letra)
         if letra in palavra:
-            for index, let in enumerate(palavra):
-                if letra == palavra[index]:
-
-                    descobrir[index] = letra
-            print(f'A letra {letra} estava na palavra!\n{"".join(descobrir)}')
+            adicionar_letra(letra, palavra, descobrir)
 
         else:
             tentativas -= 1
