@@ -57,6 +57,70 @@ tentativas = 6
 descobrir = ['_'] * len(palavra)
 letras = set()
 
+forca = ["""
+     +---+
+     |   |
+         |
+         |
+         |
+         |
+    =========
+    """,
+    """
+     +---+
+     |   |
+     O   |
+         |
+         |
+         |
+    =========
+    """,
+    """
+     +---+
+     |   |
+     O   |
+     |   |
+         |
+         |
+    =========
+    """,
+    """
+     +---+
+     |   |
+     O   |
+    /|   |
+         |
+         |
+    =========
+    """,
+    """
+     +---+
+     |   |
+     O   |
+    /|\\  |
+         |
+         |
+    =========
+    """,
+    """
+     +---+
+     |   |
+     O   |
+    /|\\  |
+    /    |
+         |
+    =========
+    """,
+    """
+     +---+
+     |   |
+     O   |
+    /|\\  |
+    / \\  |
+         |
+    =========
+    """]
+
 print(f"Categoria: {categoria}")
 
 
@@ -94,6 +158,7 @@ while not descoberta and tentativas > 0:
 
         else:
             tentativas -= 1
+            print(forca[6 - tentativas])
             print(f'A letra {letra} não existe na palavra!\nTentativas restantes: {tentativas}')
     else:
         continue
