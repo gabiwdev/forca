@@ -1,10 +1,52 @@
 import random as rdm
 
 palavras = {
-    'animal': ['raposa', 'elefante', 'pinguim', 'cachorro', 'gato'],
-    'construção': ['prédio', 'casa', 'loja', 'fazenda'],
-    'linguagem de programação': ['python', 'java', 'javascript'],
-    'fruta': ['banana', 'maça', 'abacate', 'uva', 'tomate', 'kiwi']
+    'animal': [
+        'cachorro', 'gato', 'elefante', 'leao', 'tigre', 'girafa', 'zebra',
+        'macaco', 'pinguim', 'golfinho', 'tartaruga', 'coelho', 'raposa',
+        'urso', 'lobo', 'cobra', 'aguia', 'coruja', 'rinoceronte', 'hipopotamo'
+    ],
+
+    'fruta': [
+        'banana', 'maca', 'abacate', 'uva', 'kiwi', 'laranja', 'limao',
+        'morango', 'manga', 'pera', 'melancia', 'abacaxi', 'ameixa',
+        'cereja', 'framboesa', 'pessego', 'figo', 'caju'
+    ],
+
+    'objeto': [
+        'cadeira', 'mesa', 'computador', 'telefone', 'teclado', 'mouse',
+        'janela', 'porta', 'garrafa', 'caneta', 'lapis', 'caderno',
+        'mochila', 'relógio', 'espelho', 'ventilador', 'televisao'
+    ],
+
+    'lugar': [
+        'cidade', 'praia', 'montanha', 'floresta', 'deserto', 'ilha',
+        'aeroporto', 'hospital', 'escola', 'universidade', 'biblioteca',
+        'restaurante', 'cinema', 'parque', 'castelo', 'estadio'
+    ],
+
+    'profissao': [
+        'medico', 'engenheiro', 'professor', 'programador', 'advogado',
+        'arquiteto', 'jornalista', 'designer', 'cozinheiro', 'bombeiro',
+        'policial', 'piloto', 'cientista', 'fotografo', 'musico'
+    ],
+
+    'linguagem de programacao': [
+        'python', 'java', 'javascript', 'typescript', 'csharp', 'ruby',
+        'php', 'go', 'rust', 'kotlin', 'swift', 'scala', 'haskell'
+    ],
+
+    'verbo': [
+        'correr', 'pular', 'pensar', 'comer', 'beber', 'dormir', 'escrever',
+        'ler', 'programar', 'viajar', 'nadar', 'cantar', 'dançar',
+        'construir', 'aprender', 'ensinar'
+    ],
+
+    'adjetivo': [
+        'feliz', 'triste', 'rapido', 'lento', 'forte', 'fraco', 'inteligente',
+        'corajoso', 'curioso', 'calmo', 'nervoso', 'gentil', 'agressivo',
+        'criativo', 'preguicoso'
+    ]
 }
 
 categoria = rdm.choice(list(palavras.keys()))
