@@ -11,4 +11,50 @@ categoria = rdm.choice(list(palavras.keys()))
 palavra = rdm.choice(palavras[categoria])
 
 descoberta = False
+tentativas = 6
+descobrir = ['_'] * len(palavra)
+letras = set()
+
+print(f"Categoria: {categoria}")
+
+print(palavra)
+print(descobrir)
+
+def validar_letra(letra):
+    if len(letra) != 1:
+        print('Insira apenas uma letra!')
+        return False
+    if not letra.isalpha():
+        print('Insira uma letra válida!')
+        return False
+    return True
+
+
+while not descoberta and tentativas > 0:
+    letra = input('Insira uma letra: ').strip().lower()
+    print(letra)
+    if validar_letra(letra):
+        if letra in letras:
+            print(f'Você já tentou a letra "{letra}".\nAs letras já tentadas foram {letras}')
+
+        letras.add(letra)
+        if letra in palavra:
+            for index, let in enumerate(palavra):
+                if letra == palavra[index]:
+
+                    descobrir[index] = letra
+            print(f'A letra {letra} estava na palavra!\n{"".join(descobrir)}')
+
+        else:
+            tentativas -= 1
+            print(f'A letra {letra} não existe na palavra!\nTentativas restantes: {tentativas}')
+    else:
+        continue
+    if (''.join(descobrir)) == palavra:
+        descoberta = True
+        print('Parabéns, você acertou a palavra')
+        break
+
+
+
 
